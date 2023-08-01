@@ -2,18 +2,29 @@ package week02.slot02.assets;
 
 public class Pirate {
 
-	public static int totalPirates = 0;
-	public String name;
-	int health;
+	private final static int DEFAULT_HEALTH = 3;
+	private final static String DEFAULT_NAME_PREFIX = "Pirate";
+	private static int totalPirates = 1;
+	private String name;
+	private int health;
 	int defence;
 	
 	public Pirate(String name, int health) {
-		this.name = name;
-		if(health < 0) {
-			this.health = 5;
+		if(name == null || name.isEmpty()) {
+			this.name = DEFAULT_NAME_PREFIX + totalPirates;
+			totalPirates++;
+		} else {			
+			this.name = name;
+		}
+		if(health <= 0) {
+			this.health = DEFAULT_HEALTH;
 		} else {			
 			this.health = health;
 		}
+	}
+	
+	public String toString() {
+		return "[" + name + ", " + health + "]";
 	}
 	
 }
