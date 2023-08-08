@@ -7,18 +7,27 @@ public class TestApp {
 	
 	public static void main(String[] args) {		
 		Map map = new Map(6, 6);
-		Map anotherMap = new Map(10, 10);
 		Pirate pirate1 = new Pirate("Abu", 6);
 		Pirate pirate2 = new Pirate("Bakar", 4);
 		
 		map.addPirate(1, 2, pirate1);
 		map.addPirate(5, 4, pirate2);
+//		map.addPirate(-10, 10, new Pirate("Curi", 5));
+//		map.selectPirate(10, 4);
 		
 		printArena(map);
 		
-		System.out.println("***************");
+		System.out.println("**************");
 		
-		printArena(anotherMap);
+		map.movePirate(4, 1, 1, 2);
+		
+		printArena(map);
+		
+		System.out.println("**************");
+		
+		map.movePirate(5, 4, 4, 1);
+		
+		printArena(map);
 	}
 	
 	public static void printArena(Map map) {

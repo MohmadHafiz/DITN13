@@ -5,7 +5,7 @@ public class Pirate {
 	private final static int DEFAULT_HEALTH = 3;
 	private final static String DEFAULT_NAME_PREFIX = "Pirate";
 	private static int totalPirates = 1;
-	private String name;
+	public String name;
 	private int health;
 	int defence;
 	
@@ -21,6 +21,10 @@ public class Pirate {
 		} else {			
 			this.health = health;
 		}
+	}
+	
+	public void attackOtherPirate(Pirate otherPirate) {
+		otherPirate.health--;
 	}
 	
 	public String toString() {
