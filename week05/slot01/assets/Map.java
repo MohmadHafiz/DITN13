@@ -64,7 +64,7 @@ public class Map {
 				if(newLocation instanceof Pirate) {		
 					Pirate otherPirate = (Pirate) newLocation;
 					// Attack the other pirate
-					pirate.attackOtherPirate(otherPirate);
+					pirate.atkOthrPirate(otherPirate);
 					if(otherPirate.getHealth() <= 0) {
 						arena[newX][newY] = null;
 						arena[newX][newY] = pirate;

@@ -1,7 +1,6 @@
 package week05.slot01.assets.interfaces;
 
 public class Potion implements Placeable, Consumable { 
-
 	int heal;
 	
 	public Potion (int heal) {
@@ -19,7 +18,12 @@ public class Potion implements Placeable, Consumable {
 	public String toString() {
 		return "Potion [heal=" + heal + "]";
 	}
-	
-	
-	
+
+	@Override
+	public void consumedBy(week02.slot01.assets.Pirate pirate) {
+		if(pirate != null) {
+			int newHealth = pirate.getHealth() + heal;
+			pirate.setHealth(newHealth);
+		}
+	}
 }
